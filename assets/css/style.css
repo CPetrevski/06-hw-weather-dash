@@ -1,4 +1,4 @@
-header {
+.main-header {
     background-color: royalblue;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -15,6 +15,7 @@ header {
 
 .card-main .search-box {
     height: 20px;
+    justify-content: flex-start;
 }
 
 .cards {
