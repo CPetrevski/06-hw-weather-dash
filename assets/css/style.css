@@ -1,35 +1,7 @@
-.main-header {
-    background-color: royalblue;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 50px;
-    color: white;
+body {
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
-.card-main {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.card-main .search-box {
-    height: 20px;
-    justify-content: flex-start;
-}
-
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.card1,
-.card2,
-.card3,
-.card4,
-.card5 {
-    display: flex;
-    flex-direction: column;
+img {
+    max-height: 45px;
 }

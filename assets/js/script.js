@@ -47,6 +47,28 @@ function displayResults (weather) {
 
     let humidityEl = document.querySelector(".current .humidity");
     humidityEl.innerHTML = `${weather.main.humidity}`;
+
+    if (weather.weather[0].main === "Clouds") {
+        let dayIcon = document.querySelector(".dayIcon");
+        let image = document.createElement("img");
+        image.src = ".images/cloud.png"
+        dayIcon.appendChild(image);
+    } else if (weather.weather[0].main === "Rain") {
+        let dayIcon = document.querySelector(".dayIcon");
+        let image = document.createElement("img");
+        image.src = ".././/images/rain.png";
+        dayIcon.appendChild(image);
+    } else if (weather.weather[0].main === "Clear") {
+        let dayIcon = document.querySelector(".dayIcon");
+        let image = document.createElement("img");
+        image.src = "../../images/sunny.png";
+        dayIcon.appendChild(image);        
+    } else if (weather.weather[0].main === "Snow") {
+        let dayIcon = document.querySelector(".dayIcon");
+        let image = document.createElement("img");
+        image.src = "././images/snow.png";
+        dayIcon.appendChild(image);
+    } 
 }
 
 function displayFiveDay (list) {
@@ -95,4 +117,5 @@ function displayFiveDay (list) {
     humidityEL4.innerHTML = `${list.list[3].main.humidity}`;
     let humidityEL5 = document.querySelector(".cards .card5 .humidity5");
     humidityEL5.innerHTML = `${list.list[4].main.humidity}`;
+
 }

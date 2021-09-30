@@ -4,77 +4,111 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" 
+        crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <header class = "main-header">
-        <h1 class = "">Weather Dashboard</h1>
+    <header class = "jumbotron jumbotron-fluid bg-primary text-white text-center main-header">
+        <div class = "container pt-3 pb-3">
+            <h1 class = "">Weather Dashboard</h1>
+        </div>
     </header>
     
-    <div class = "card-main">
-        <input type="text" autocomplete="off" class="search-box " placeholder="Search for a city...">
-        <div class="location">
-            <h3>City: </h3>
-            <div class = "city">Sydney</div>
-            <h3>Date:</h3>
-            <div class = "date">Saturday 26 September 2021</div>            
+    
+        <div class = "container card-main">
+            <div class = "row text-center pd-4">
+                <input type="text" autocomplete="off" class="search-box w-25 form-control text-center justify-content-center" placeholder="Search for a city...">
+                <div class="location">
+                    <h3>City: </h3>
+                    <div class = "city">Sydney</div>
+                    <h3>Date:</h3>
+                    <div class = "date">Saturday 26 September 2021</div>            
+                </div>
+                <div class = "current">
+                    <div class = "dayIcon"></div>
+                    <div class = "temp">17<span>°C</span></div>
+                    <div class = "wind">Low</div>
+                    <div class = "weather">Sunny</div>
+                    <div class = "humidity">0</div>                    
+                </div>
+            </div>
         </div>
-        <div class = "current">
-            <div class = "temp">17<span>°C</span></div>
-            <div class = "wind">Low</div>
-            <div class = "weather">Sunny</div>
-            <div class = "humidity">0</div>
-        </div>
-    </div>
 
-    <section class = "cards">
-        <header>
+    <div class = "p-5 bg-primary">
+        <div></div>
+        <header class = "text-center text-white">
             <h2>Weather for the next 5 days:</h2>
         </header>
+            <div class ="container">
+                <div class = "row g-4 cards">
+                    <div class="card1 col-2">
+                        <div class = "card bg-light">
+                            <ul>
+                                <li class = "day1Icon">-</li>
+                                <li class = "temp1">17<span>°C</span></li>
+                                <li class = "wind1">0</li>
+                                <li class = "weather1">Sunny</li>
+                                <li class = "humidity1">0</li>
+                            </ul>
+                        </div>   
+                    </div>
+                    <div class="card2 col-2">
+                        <div class = "card bg-light">
+                            <ul>
+                                <li class = "day2Icon">-</li>
+                                <li class = "temp2">17<span>°C</span></li>
+                                <li class = "wind2">0</li>
+                                <li class = "weather2">Sunny</li>
+                                <li class = "humidity2">0</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card3 col-2">
+                        <div class = "card bg-light">
+                            <ul>
+                                <li class = "day3Icon">-</li>
+                                <li class = "temp3">17<span>°C</span></li>
+                                <li class = "wind3">0</li>
+                                <li class = "weather3">Sunny</li>
+                                <li class = "humidity3">0</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card4 col-2">
+                        <div class = "card bg-light">
+                            <ul>
+                                <li class = "day4Icon"></li>
+                                <li class = "temp4">17<span>°C</span></li>
+                                <li class = "wind4">0</li>
+                                <li class = "weather4">Sunny</li>
+                                <li class = "humidity4">0</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card5 col-2">
+                        <div class = "card bg-light">
+                            <ul>
+                                <li class = "day5Icon"></li>
+                                <li class = "temp5">17<span>°C</span></li>
+                                <li class = "wind5">0</li>
+                                <li class = "weather5">Sunny</li>
+                                <li class = "humidity5">0</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
 
-        <div class="card1">
-            <ul>
-                <li class = "temp1">17<span>°C</span></li>
-                <li class = "wind1">0</li>
-                <li class = "weather1">Sunny</li>
-                <li class = "humidity1">0</li>
-            </ul>   
-        </div>
-        <div class="card2">
-            <ul>
-                <li class = "temp2">17<span>°C</span></li>
-                <li class = "wind2">0</li>
-                <li class = "weather2">Sunny</li>
-                <li class = "humidity2">0</li>
-            </ul>
-        </div>
-        <div class="card3">
-            <ul>
-                <li class = "temp3">17<span>°C</span></li>
-                <li class = "wind3">0</li>
-                <li class = "weather3">Sunny</li>
-                <li class = "humidity3">0</li>
-            </ul>
-        </div>
-        <div class="card4">
-            <ul>
-                <li class = "temp4">17<span>°C</span></li>
-                <li class = "wind4">0</li>
-                <li class = "weather4">Sunny</li>
-                <li class = "humidity4">0</li>
-            </ul>
-        </div>
-        <div class="card5">
-            <ul>
-                <li class = "temp5">17<span>°C</span></li>
-                <li class = "wind5">0</li>
-                <li class = "weather5">Sunny</li>
-                <li class = "humidity5">0</li>
-            </ul>
-        </div>
-    </section>
-
-    <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" 
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
