@@ -51,6 +51,6 @@ THEN I am again presented with current and future conditions for that city
 ## Links
 
 ### REPO
-
+- https://github.com/CPetrevski/06-hw-weather-dash
 ### PAGE
-
+- https://cpetrevski.github.io/06-hw-weather-dash/

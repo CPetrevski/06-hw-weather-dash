@@ -3,6 +3,9 @@ const api = {
     base: "https://api.openweathermap.org/data/2.5/"
 };
 const searchBox = document.querySelector(".search-box");
+let cityStorage = {
+    city: ""
+};
 
 searchBox.addEventListener("keypress", setQuery);
 // Search Box function when Enter is pressed
@@ -10,6 +13,7 @@ function setQuery (event) {
     if (event.keyCode == 13) {
         getResults(searchBox.value);
         getFiveDay(searchBox.value);
+        localStorage.setItem("cityName", searchBox.value)
     }
 };
 
