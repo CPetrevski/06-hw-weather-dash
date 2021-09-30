@@ -13,9 +13,27 @@ function setQuery (event) {
     if (event.keyCode == 13) {
         getResults(searchBox.value);
         getFiveDay(searchBox.value);
-        localStorage.setItem("cityName", searchBox.value)
+        saveResult();
+        // localStorage.setItem("cityName", searchBox.value)
+
     }
 };
+
+function saveResult() {
+    var newCity = searchBox.value;
+    if (localStorage.getItem("city") == null ) {
+        localStorage.setItem("city", "[]");
+    }
+
+    var oldCity = JSON.parse(localStorage.getItem("city"));
+    oldCity.push(newCity);
+
+    localStorage.setItem("city", JSON.stringify(oldCity));
+}
+
+function showHistory ( ) {
+    
+}
 
 // Fetch fucntion for current day 
 function getResults (query) {
