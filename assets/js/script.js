@@ -5,7 +5,7 @@ const api = {
 const searchBox = document.querySelector(".search-box");
 
 searchBox.addEventListener("keypress", setQuery);
-
+// Search Box function when Enter is pressed
 function setQuery (event) {
     if (event.keyCode == 13) {
         getResults(searchBox.value);
@@ -13,6 +13,7 @@ function setQuery (event) {
     }
 };
 
+// Fetch fucntion for current day 
 function getResults (query) {
     fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
         .then(weather => {
@@ -20,6 +21,7 @@ function getResults (query) {
         }) .then (displayResults);
 }
 
+// Fetch for API for future days
 function getFiveDay (query) {
     fetch(`${api.base}forecast?q=${query}&units=metric&APPID=${api.key}`)
         .then(list => {
@@ -27,12 +29,14 @@ function getFiveDay (query) {
         })  .then (displayFiveDay)
 }
 
+// function for current day to display data
 function displayResults (weather) {
     console.log(weather);
     
     let cityEl = document.querySelector(".location .city");
     cityEl.innerHTML = `${weather.name}, ${weather.sys.country}`
-;
+;   
+    // Moment used for current day data.
     let dateEl = document.querySelector(".location .date");
     dateEl.innerHTML = moment().format("dddd/MM/YYYY");
 
@@ -51,26 +55,27 @@ function displayResults (weather) {
     if (weather.weather[0].main === "Clouds") {
         let dayIcon = document.querySelector(".dayIcon");
         let image = document.createElement("img");
-        image.src = ".images/cloud.png"
+        image.src = "assets/images/cloud.png"
         dayIcon.appendChild(image);
     } else if (weather.weather[0].main === "Rain") {
         let dayIcon = document.querySelector(".dayIcon");
         let image = document.createElement("img");
-        image.src = ".././/images/rain.png";
+        image.src = "assets/images/rain.png";
         dayIcon.appendChild(image);
     } else if (weather.weather[0].main === "Clear") {
         let dayIcon = document.querySelector(".dayIcon");
         let image = document.createElement("img");
-        image.src = "../../images/sunny.png";
+        image.src = "assets/images/sunny.png";
         dayIcon.appendChild(image);        
     } else if (weather.weather[0].main === "Snow") {
         let dayIcon = document.querySelector(".dayIcon");
         let image = document.createElement("img");
-        image.src = "././images/snow.png";
+        image.src = "assets/images/snow.png";
         dayIcon.appendChild(image);
     } 
 }
 
+// function for 5 day display data.
 function displayFiveDay (list) {
     console.log(list);
 
@@ -117,5 +122,101 @@ function displayFiveDay (list) {
     humidityEL4.innerHTML = `${list.list[3].main.humidity}`;
     let humidityEL5 = document.querySelector(".cards .card5 .humidity5");
     humidityEL5.innerHTML = `${list.list[4].main.humidity}`;
+
+    let day1Icon = document.querySelector(".cards .card1 .day1Icon");
+    let day2Icon = document.querySelector(".cards .card2 .day2Icon");
+    let day3Icon = document.querySelector(".cards .card3 .day3Icon");
+    let day4Icon = document.querySelector(".cards .card4 .day4Icon");
+    let day5Icon = document.querySelector(".cards .card5 .day5Icon");
+
+    if (list.list[0].weather[0].main === "Clouds") {
+        let image = document.createElement("img");
+        image.src = "assets/images/cloud.png"
+        day1Icon.appendChild(image);
+    } else if (list.list[0].weather[0].main === "Rain") {
+        let image = document.createElement("img");
+        image.src = "assets/images/rain.png"
+        day1Icon.appendChild(image);
+    } else if (list.list[0].weather[0].main === "Clear") {
+        let image = document.createElement("img");
+        image.src = "assets/images/sunny.png"
+        day1Icon.appendChild(image);
+    } else if (list.list[0].weather[0].main === "Snow") {
+        let image = document.createElement("img");
+        image.src = "assets/images/snow.png"
+        day1Icon.appendChild(image);
+    }
+
+    if (list.list[1].weather[0].main === "Clouds") {
+        let image = document.createElement("img");
+        image.src = "assets/images/cloud.png"
+        day2Icon.appendChild(image);
+    } else if (list.list[1].weather[0].main === "Rain") {
+        let image = document.createElement("img");
+        image.src = "assets/images/rain.png"
+        day2Icon.appendChild(image);
+    } else if (list.list[1].weather[0].main === "Clear") {
+        let image = document.createElement("img");
+        image.src = "assets/images/sunny.png"
+        day2Icon.appendChild(image);
+    } else if (list.list[1].weather[0].main === "Snow") {
+        let image = document.createElement("img");
+        image.src = "assets/images/snow.png"
+        day2Icon.appendChild(image);
+    }
+
+    if (list.list[2].weather[0].main === "Clouds") {
+        let image = document.createElement("img");
+        image.src = "assets/images/cloud.png"
+        day3Icon.appendChild(image);
+    } else if (list.list[2].weather[0].main === "Rain") {
+        let image = document.createElement("img");
+        image.src = "assets/images/rain.png"
+        day3Icon.appendChild(image);
+    } else if (list.list[2].weather[0].main === "Clear") {
+        let image = document.createElement("img");
+        image.src = "assets/images/sunny.png"
+        day3Icon.appendChild(image);
+    } else if (list.list[2].weather[0].main === "Snow") {
+        let image = document.createElement("img");
+        image.src = "assets/images/snow.png"
+        day3Icon.appendChild(image);
+    }
+
+    if (list.list[3].weather[0].main === "Clouds") {
+        let image = document.createElement("img");
+        image.src = "assets/images/cloud.png"
+        day4Icon.appendChild(image);
+    } else if (list.list[3].weather[0].main === "Rain") {
+        let image = document.createElement("img");
+        image.src = "assets/images/rain.png"
+        day4Icon.appendChild(image);
+    } else if (list.list[3].weather[0].main === "Clear") {
+        let image = document.createElement("img");
+        image.src = "assets/images/sunny.png"
+        day4Icon.appendChild(image);
+    } else if (list.list[3].weather[0].main === "Snow") {
+        let image = document.createElement("img");
+        image.src = "assets/images/snow.png"
+        day4Icon.appendChild(image);
+    }
+
+    if (list.list[4].weather[0].main === "Clouds") {
+        let image = document.createElement("img");
+        image.src = "assets/images/cloud.png"
+        day5Icon.appendChild(image);
+    } else if (list.list[4].weather[0].main === "Rain") {
+        let image = document.createElement("img");
+        image.src = "assets/images/rain.png"
+        day5Icon.appendChild(image);
+    } else if (list.list[4].weather[0].main === "Clear") {
+        let image = document.createElement("img");
+        image.src = "assets/images/sunny.png"
+        day5Icon.appendChild(image);
+    } else if (list.list[4].weather[0].main === "Snow") {
+        let image = document.createElement("img");
+        image.src = "assets/images/snow.png"
+        day5Icon.appendChild(image);
+    }
 
 }
